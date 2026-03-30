@@ -1,0 +1,87 @@
+[
+  {
+    "label": "NullClaw Status",
+    "command": "nullclaw status",
+    "use_new_terminal": false,
+    "reveal": "always"
+  },
+  {
+    "label": "NullClaw Doctor",
+    "command": "nullclaw doctor",
+    "use_new_terminal": false,
+    "reveal": "always"
+  },
+  {
+    "label": "NullClaw Capabilities JSON",
+    "command": "nullclaw capabilities --json",
+    "use_new_terminal": false,
+    "reveal": "always"
+  },
+  {
+    "label": "NullClaw Hardware Scan",
+    "command": "nullclaw hardware scan",
+    "use_new_terminal": false,
+    "reveal": "always"
+  },
+  {
+    "label": "NullClaw Channel Status",
+    "command": "nullclaw channel status",
+    "use_new_terminal": false,
+    "reveal": "always"
+  },
+  {
+    "label": "NullClaw One-shot Message",
+    "command": "nullclaw agent -m \"Write a summary of today's logs\"",
+    "use_new_terminal": true,
+    "reveal": "always"
+  },
+  {
+    "label": "NullClaw Run Task",
+    "command": "nullclaw run \"analyze repository and suggest refactors\"",
+    "use_new_terminal": true,
+    "reveal": "always"
+  },
+  {
+    "label": "NullClaw Agent Interactive",
+    "command": "nullclaw agent",
+    "use_new_terminal": true,
+    "reveal": "always"
+  },
+  {
+    "label": "NullClaw Chat",
+    "command": "nullclaw chat",
+    "use_new_terminal": true,
+    "reveal": "always"
+  },
+  {
+    "label": "NullClaw Gateway",
+    "command": "nullclaw gateway",
+    "use_new_terminal": true,
+    "reveal": "always"
+  },
+  {
+    "label": "NullClaw Daemon",
+    "command": "nullclaw daemon",
+    "use_new_terminal": true,
+    "reveal": "always"
+  },
+
+  {
+    "label": "Bookmark Toggle (line marker)",
+    "command": "echo \"BOOKMARK\"",
+    "use_new_terminal": false,
+    "reveal": "never"
+  },
+  {
+    "label": "Bookmark Next (search marker)",
+    "command": "echo \"Use Find Next (F3) on token BOOKMARK\"",
+    "use_new_terminal": false,
+    "reveal": "never"
+  },
+  {
+    "label": "Bookmark Prev (search marker)",
+    "command": "echo \"Use Find Previous (Shift+F3) on token BOOKMARK\"",
+    "use_new_terminal": false,
+    "reveal": "never"
+  }
+]

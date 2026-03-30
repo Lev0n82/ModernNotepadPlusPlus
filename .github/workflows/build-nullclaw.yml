@@ -1,0 +1,53 @@
+name: Null Claw Enterprise Build Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build-rust-daemon:
+    name: Build Swarm Executable (Win32 API)
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    # GitHub Runner possesses full open internet access (Bypasses Local Proxy Blocks)
+    - name: Set up Rust compiler
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        target: x86_64-pc-windows-msvc
+        override: true
+        
+    - name: Assemble Win32 Actix Engine
+      run: |
+        cargo build --release --manifest-path ./Swarm_Daemon/Cargo.toml
+        
+    - name: Upload Swarm Executable
+      uses: actions/upload-artifact@v4
+      with:
+        name: NullClaw-Windows-Service
+        path: ./Swarm_Daemon/target/release/nullclaw_daemon.exe
+
+  build-csharp-extractor:
+    name: Build Intelligence Extractor
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup .NET 8.0 SDK
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+        
+    - name: Compile Reflection Library
+      run: |
+        dotnet build ./GRACE_LSP_Dictionary/GraceDictionaryExtractor.csproj -c Release
+        
+    - name: Upload JSON Extractor Script
+      uses: actions/upload-artifact@v4
+      with:
+        name: NullClaw-CSharp-Intelligence
+        path: ./GRACE_LSP_Dictionary/bin/Release/net8.0/
+

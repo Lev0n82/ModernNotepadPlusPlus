@@ -1,0 +1,50 @@
+warning: unused import: `max`
+ --> app\src\core\buffer.rs:3:16
+  |
+3 | use std::cmp::{max, min};
+  |                ^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: `app` (lib) generated 1 warning (run `cargo fix --lib -p app` to apply 1 suggestion)
+    Checking app v0.1.0 (D:\Projects\ModernNotepadPlusPlus\app)
+warning: unused imports: `Length`, `Space`, `column`, `container`, and `row`
+ --> app\src\main.rs:2:63
+  |
+2 |     Application, Settings, Theme, executor, Command, Element, Length,
+  |                                                               ^^^^^^
+3 |     widget::{column, row, text, button, text_input, Space, container},
+  |              ^^^^^^  ^^^                            ^^^^^  ^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+error[E0277]: the trait bound `iced_native::element::Element<'_, _, _>: From<String>` is not satisfied
+   --> app\src\main.rs:113:37
+    |
+113 |             tabs = tabs.push(button(label).on_press(Message::TabSelected(i)));
+    |                              ------ ^^^^^ the trait `From<String>` is not implemented for `iced_native::element::Element<'_, _, _>`
+    |                              |
+    |                              required by a bound introduced by this call
+    |
+    = help: the following other types implement trait `From<T>`:
+              `iced_native::element::Element<'_, Message, Renderer>` implements `From<&str>`
+              `iced_native::element::Element<'_, Message, Renderer>` implements `From<VerticalSlider<'_, T, Message, Renderer>>`
+              `iced_native::element::Element<'_, Message, Renderer>` implements `From<iced::widget::ProgressBar<Renderer>>`
+              `iced_native::element::Element<'_, Message, Renderer>` implements `From<iced::widget::Rule<Renderer>>`
+              `iced_native::element::Element<'_, Message, Renderer>` implements `From<iced::widget::Slider<'_, T, Message, Renderer>>`
+              `iced_native::element::Element<'_, Message, Renderer>` implements `From<iced::widget::Space>`
+              `iced_native::element::Element<'_, Message, Renderer>` implements `From<iced_native::overlay::menu::List<'_, T, Renderer>>`
+              `iced_native::element::Element<'_, Message, Renderer>` implements `From<iced_native::widget::button::Button<'_, Message, Renderer>>`
+            and 16 others
+    = note: required for `String` to implement `Into<iced_native::element::Element<'_, _, _>>`
+note: required by a bound in `button`
+   --> C:\Users\MinasyL\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\iced_native-0.10.3\src\widget\helpers.rs:83:19
+    |
+ 82 | pub fn button<'a, Message, Renderer>(
+    |        ------ required by a bound in this function
+ 83 |     content: impl Into<Element<'a, Message, Renderer>>,
+    |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ required by this bound in `button`
+
+For more information about this error, try `rustc --explain E0277`.
+warning: `app` (bin "app") generated 1 warning
+error: could not compile `app` (bin "app") due to 1 previous error; 1 warning emitted

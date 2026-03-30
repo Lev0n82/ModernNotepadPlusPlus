@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>
+    <Product Name='Modern Notepad++' Manufacturer='Lev0n82'
+        Id='*' UpgradeCode='99999999-9999-9999-9999-999999999999'
+        Language='1033' Codepage='1252' Version='0.1.0'>
+        
+        <Package Id='*' Keywords='Installer' Description='Modern Notepad++ Installer'
+            Comments='A modern Rust rewrite of Notepad++' Manufacturer='Lev0n82'
+            InstallerVersion='200' Languages='1033' Compressed='yes' SummaryCodepage='1252' />
+
+        <Media Id='1' Cabinet='app.cab' EmbedCab='yes' />
+        
+        <Directory Id='TARGETDIR' Name='SourceDir'>
+            <Directory Id='ProgramFilesFolder'>
+                <Directory Id='INSTALLDIR' Name='Modern Notepad++'>
+                    <!-- Main Editor Binary -->
+                    <Component Id='MainExecutable' Guid='*'>
+                        <File Id='AppExe' Name='app.exe' Source='..\target\release\app.exe' KeyPath='yes' />
+                    </Component>
+                    <!-- Null Claw LSP Binary -->
+                    <Component Id='NullclawExe' Guid='*'>
+                        <File Id='NullclawLspExe' Name='nullclaw-ls.exe' Source='..\target\release\nullclaw-ls.exe' KeyPath='yes' />
+                    </Component>
+                </Directory>
+            </Directory>
+        </Directory>
+
+        <Feature Id='Complete' Level='1'>
+            <ComponentRef Id='MainExecutable' />
+            <ComponentRef Id='NullclawExe' />
+        </Feature>
+    </Product>
+</Wix>

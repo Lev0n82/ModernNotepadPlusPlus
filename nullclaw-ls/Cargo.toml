@@ -1,0 +1,21 @@
+[package]
+name = "nullclaw-ls"
+version = "0.1.0"
+edition = "2021"
+authors = ["Lev0n82"]
+
+[dependencies]
+# The LSP framework
+tower-lsp = "0.20"
+tokio = { version = "1", features = ["full"] }
+
+# Modern code parsing (fast and incremental)
+tree-sitter = "0.20"
+
+# AI/ML logic handling (local-first)
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Parallelism for that "snappy" feel
+dashmap = "5.5"
+rayon = "1.8"

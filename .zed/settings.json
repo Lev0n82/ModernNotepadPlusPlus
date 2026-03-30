@@ -1,0 +1,23 @@
+{
+  "theme": "One Dark",
+  "buffer_font_size": 14,
+  "ui_font_size": 14,
+
+  "soft_wrap": "editor_width",
+  "relative_line_numbers": false,
+  "tab_size": 4,
+  "hard_tabs": false,
+
+  "autosave": "on_focus_change",
+  "format_on_save": "on",
+
+  "gutter": {
+    "line_numbers": true,
+    "folds": true
+  },
+
+  "terminal": {
+    "dock": "bottom",
+    "working_directory": "current_project_directory"
+  }
+}

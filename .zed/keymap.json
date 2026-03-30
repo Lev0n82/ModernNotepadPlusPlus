@@ -1,0 +1,69 @@
+[
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-f": "search::Find",
+      "ctrl-h": "search::Replace",
+      "ctrl-shift-f": "search::SearchInFiles",
+      "f3": "search::FindNext",
+      "shift-f3": "search::FindPrevious",
+      "ctrl-g": "editor::GoToLine",
+
+      "ctrl-d": "editor::DuplicateLineDown",
+      "ctrl-l": "editor::DeleteLine",
+      "ctrl-shift-k": "editor::DeleteLine",
+      "ctrl-t": "editor::Transpose",
+
+      "ctrl-shift-up": "editor::MoveLineUp",
+      "ctrl-shift-down": "editor::MoveLineDown",
+
+      "ctrl-enter": "editor::InsertLineBelow",
+      "ctrl-shift-enter": "editor::InsertLineAbove",
+
+      "ctrl-shift-u": "editor::TransformToUppercase",
+      "ctrl-u": "editor::TransformToLowercase",
+
+      "ctrl-space": "editor::ShowCompletions",
+      "ctrl-shift-space": "editor::ShowSignatureHelp",
+
+      "alt-shift-down": "editor::AddSelectionBelow",
+      "alt-shift-up": "editor::AddSelectionAbove",
+
+      "alt-0": "editor::FoldAll",
+      "alt-shift-0": "editor::UnfoldAll",
+
+      "ctrl-f2": "editor::ToggleBookmark",
+      "f2": "editor::NextBookmark",
+      "shift-f2": "editor::PrevBookmark",
+
+      "ctrl-tab": "workspace::ActivateNextTab",
+      "ctrl-shift-tab": "workspace::ActivatePreviousTab",
+      "ctrl-pageup": "workspace::ActivatePreviousTab",
+      "ctrl-pagedown": "workspace::ActivateNextTab",
+
+      "ctrl-=": "editor::IncreaseFontSize",
+      "ctrl-+": "editor::IncreaseFontSize",
+      "ctrl--": "editor::DecreaseFontSize",
+      "ctrl-0": "editor::ResetFontSize",
+
+      "f11": "workspace::ToggleFullScreen"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-alt-n s": "task::Spawn:NullClaw Status",
+      "ctrl-alt-n d": "task::Spawn:NullClaw Doctor",
+      "ctrl-alt-n c": "task::Spawn:NullClaw Capabilities JSON",
+      "ctrl-alt-n h": "task::Spawn:NullClaw Hardware Scan",
+      "ctrl-alt-n g": "task::Spawn:NullClaw Gateway",
+      "ctrl-alt-n a": "task::Spawn:NullClaw Agent Interactive",
+      "ctrl-alt-n r": "task::Spawn:NullClaw Run Task",
+      "ctrl-alt-n m": "task::Spawn:NullClaw One-shot Message",
+
+      "ctrl-alt-b t": "task::Spawn:Bookmark Toggle (line marker)",
+      "ctrl-alt-b n": "task::Spawn:Bookmark Next (search marker)",
+      "ctrl-alt-b p": "task::Spawn:Bookmark Prev (search marker)"
+    }
+  }
+]
