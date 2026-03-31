@@ -43,7 +43,7 @@ jobs:
         
     - name: Compile Reflection Library
       run: |
-        dotnet build ./GRACE_LSP_Dictionary/GraceDictionaryExtractor.csproj -c Release
+        dotnet build ./GRACE_LSP_Dictionary/GRACE_LSP_Dictionary.csproj -c Release
         
     - name: Upload JSON Extractor Script
       uses: actions/upload-artifact@v4
